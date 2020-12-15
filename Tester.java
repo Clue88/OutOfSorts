@@ -20,7 +20,7 @@ public class Tester {
             check(test, Arrays.toString(c), "[1, 2, 3, 4, 5, 6]");
 
             Random rng = new Random();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 100; i++) {
                 int seed = rng.nextInt();
                 int[] arSort = new int[10];
                 int[] arOrig = new int[10];
