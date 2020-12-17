@@ -1,2 +1,2 @@
 javac Tester.java
-java Tester
+java Tester $1 $2
