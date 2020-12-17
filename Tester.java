@@ -1,6 +1,6 @@
 /******************************************************************************
  *  Compilation:  javac Tester.java
- *  Execution:    java Tester [num_tests] [array_size]
+ *  Execution:    java Tester [num_tests=NUM_TESTS] [array_size=ARRAY_SIZE]
  *
  *  num_tests: The number of trials per sorting method used.
  *  array_size: The size of arrays used per trial.
@@ -16,8 +16,15 @@ public class Tester {
         String test = "";
         int num_tests = 100;
         int array_size = 10;
-        if (args.length > 0) num_tests = Integer.parseInt(args[0]);
-        if (args.length > 1) array_size = Integer.parseInt(args[1]);
+
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].split("=")[0].equals("num_tests")) {
+                num_tests = Integer.parseInt(args[i].split("=")[1]);
+            }
+            if (args[i].split("=")[0].equals("array_size")) {
+                array_size = Integer.parseInt(args[i].split("=")[1]);
+            }
+        }
 
         test = "Sorts.bubbleSort(int[] data)";
         try {
