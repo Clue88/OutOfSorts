@@ -1,9 +1,9 @@
 /******************************************************************************
  *  Compilation:  javac Tester.java
- *  Execution:    java Tester [num_tests=NUM_TESTS] [array_size=ARRAY_SIZE]
+ *  Execution:    java Tester [numTests=NUM_TESTS] [arraySize=ARRAY_SIZE]
  *
- *  num_tests: The number of trials per sorting method used.
- *  array_size: The size of arrays used per trial.
+ *  numTests: The number of trials per sorting method used.
+ *  arraySize: The size of arrays used per trial.
  ******************************************************************************/
 
 import java.util.Arrays;
@@ -14,15 +14,15 @@ public class Tester {
     public static void main(String[] args) {
         if (args.length > 0 && Boolean.parseBoolean(args[0]) == false) DEBUG = false;
         String test = "";
-        int num_tests = 100;
-        int array_size = 10;
+        int numTests = 100;
+        int arraySize = 10;
 
         for (int i = 0; i < args.length; i++) {
-            if (args[i].split("=")[0].equals("num_tests")) {
-                num_tests = Integer.parseInt(args[i].split("=")[1]);
+            if (args[i].split("=")[0].equals("numTests")) {
+                numTests = Integer.parseInt(args[i].split("=")[1]);
             }
-            if (args[i].split("=")[0].equals("array_size")) {
-                array_size = Integer.parseInt(args[i].split("=")[1]);
+            if (args[i].split("=")[0].equals("arraySize")) {
+                arraySize = Integer.parseInt(args[i].split("=")[1]);
             }
         }
 
@@ -42,12 +42,12 @@ public class Tester {
             check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
-            for (int i = 0; i < num_tests; i++) {
+            for (int i = 0; i < numTests; i++) {
                 int seed = rng.nextInt();
-                int[] arSort = new int[array_size];
-                int[] arOrig = new int[array_size];
+                int[] arSort = new int[arraySize];
+                int[] arOrig = new int[arraySize];
                 Random rand = new Random(seed);
-                for (int j = 0; j < array_size; j++) {
+                for (int j = 0; j < arraySize; j++) {
                     int num = rand.nextInt() % 1000;
                     arSort[j] = num;
                     arOrig[j] = num;
@@ -76,12 +76,12 @@ public class Tester {
             check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
-            for (int i = 0; i < num_tests; i++) {
+            for (int i = 0; i < numTests; i++) {
                 int seed = rng.nextInt();
-                int[] arSort = new int[array_size];
-                int[] arOrig = new int[array_size];
+                int[] arSort = new int[arraySize];
+                int[] arOrig = new int[arraySize];
                 Random rand = new Random(seed);
-                for (int j = 0; j < array_size; j++) {
+                for (int j = 0; j < arraySize; j++) {
                     int num = rand.nextInt() % 1000;
                     arSort[j] = num;
                     arOrig[j] = num;
@@ -110,12 +110,12 @@ public class Tester {
             check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
-            for (int i = 0; i < num_tests; i++) {
+            for (int i = 0; i < numTests; i++) {
                 int seed = rng.nextInt();
-                int[] arSort = new int[array_size];
-                int[] arOrig = new int[array_size];
+                int[] arSort = new int[arraySize];
+                int[] arOrig = new int[arraySize];
                 Random rand = new Random(seed);
-                for (int j = 0; j < array_size; j++) {
+                for (int j = 0; j < arraySize; j++) {
                     int num = rand.nextInt() % 1000;
                     arSort[j] = num;
                     arOrig[j] = num;
