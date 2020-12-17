@@ -27,4 +27,19 @@ public class Sorts {
             data[smallest_ind] = old;
         }
     }
+
+    public static void insertionSort(int[] data) {
+        for (int i = 1; i < data.length; i++) {
+            int old = data[i];
+            for (int j = 0; j < i; j++) {
+                if (old < data[j]) {
+                    for (int k = i - 1; k >= j; k--) {
+                        data[k+1] = data[k];
+                    }
+                    data[j] = old;
+                    break;
+                }
+            }
+        }
+    }
 }

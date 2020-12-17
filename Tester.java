@@ -94,6 +94,40 @@ public class Tester {
             except(test, e);
         }
 
+        test = "Sorts.insertionSort(int[] data)";
+        try {
+            int[] a = {5, 1, 12, -5, 16};
+            int[] b = {2, 3, 4, 5, 1};
+            int[] c = {6, 1, 2, 3, 4, 5};
+            int[] d = {};
+            Sorts.insertionSort(a);
+            Sorts.insertionSort(b);
+            Sorts.insertionSort(c);
+            Sorts.insertionSort(d);
+            check(test, Arrays.toString(a), "[-5, 1, 5, 12, 16]");
+            check(test, Arrays.toString(b), "[1, 2, 3, 4, 5]");
+            check(test, Arrays.toString(c), "[1, 2, 3, 4, 5, 6]");
+            check(test, Arrays.toString(d), "[]");
+
+            Random rng = new Random();
+            for (int i = 0; i < num_tests; i++) {
+                int seed = rng.nextInt();
+                int[] arSort = new int[array_size];
+                int[] arOrig = new int[array_size];
+                Random rand = new Random(seed);
+                for (int j = 0; j < array_size; j++) {
+                    int num = rand.nextInt() % 1000;
+                    arSort[j] = num;
+                    arOrig[j] = num;
+                }
+                Sorts.insertionSort(arSort);
+                Arrays.sort(arOrig);
+                check(test, Arrays.toString(arSort), Arrays.toString(arOrig), seed);
+            }
+        } catch(RuntimeException e) {
+            except(test, e);
+        }
+
         if (ERR == 0) System.out.println("All good!");
         else if (ERR == 1) System.out.println("Uh oh... 1 error found.");
         else System.out.println("Uh oh... " + ERR + " errors found.");
