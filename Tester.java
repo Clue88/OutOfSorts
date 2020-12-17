@@ -1,3 +1,11 @@
+/******************************************************************************
+ *  Compilation:  javac Tester.java
+ *  Execution:    java Tester [num_tests] [array_size]
+ *
+ *  num_tests: The number of trials per sorting method used.
+ *  array_size: The size of arrays used per trial.
+ ******************************************************************************/
+
 import java.util.Arrays;
 import java.util.Random;
 public class Tester {
@@ -6,6 +14,10 @@ public class Tester {
     public static void main(String[] args) {
         if (args.length > 0 && Boolean.parseBoolean(args[0]) == false) DEBUG = false;
         String test = "";
+        int num_tests = 100;
+        int array_size = 10;
+        if (args.length > 0) num_tests = Integer.parseInt(args[0]);
+        if (args.length > 1) array_size = Integer.parseInt(args[1]);
 
         test = "Sorts.bubbleSort(int[] data)";
         try {
@@ -23,12 +35,12 @@ public class Tester {
             check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < num_tests; i++) {
                 int seed = rng.nextInt();
-                int[] arSort = new int[10];
-                int[] arOrig = new int[10];
+                int[] arSort = new int[array_size];
+                int[] arOrig = new int[array_size];
                 Random rand = new Random(seed);
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < array_size; j++) {
                     int num = rand.nextInt() % 1000;
                     arSort[j] = num;
                     arOrig[j] = num;
@@ -57,12 +69,12 @@ public class Tester {
             check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < num_tests; i++) {
                 int seed = rng.nextInt();
-                int[] arSort = new int[10];
-                int[] arOrig = new int[10];
+                int[] arSort = new int[array_size];
+                int[] arOrig = new int[array_size];
                 Random rand = new Random(seed);
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < array_size; j++) {
                     int num = rand.nextInt() % 1000;
                     arSort[j] = num;
                     arOrig[j] = num;
