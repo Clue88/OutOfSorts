@@ -1,7 +1,8 @@
 /******************************************************************************
  *  Compilation:  javac Tester.java
- *  Execution:    java Tester [numTests=NUM_TESTS] [arraySize=ARRAY_SIZE]
+ *  Execution:    java Tester [DEBUG] [numTests=NUM_TESTS] [arraySize=ARRAY_SIZE]
  *
+ *  DEBUG: Whether to add extra outputs (seed, error output). Defaults true.
  *  numTests: The number of trials per sorting method used.
  *  arraySize: The size of arrays used per trial.
  ******************************************************************************/
