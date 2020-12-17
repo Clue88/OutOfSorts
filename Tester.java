@@ -11,13 +11,16 @@ public class Tester {
         try {
             int[] a = {5, 1, 12, -5, 16};
             int[] b = {2, 3, 4, 5, 1};
-            int[] c = {6, 1, 2, 3, 4, 5}; 
+            int[] c = {6, 1, 2, 3, 4, 5};
+            int[] d = {};
             Sorts.bubbleSort(a);
             Sorts.bubbleSort(b);
             Sorts.bubbleSort(c);
+            Sorts.bubbleSort(d);
             check(test, Arrays.toString(a), "[-5, 1, 5, 12, 16]");
             check(test, Arrays.toString(b), "[1, 2, 3, 4, 5]");
             check(test, Arrays.toString(c), "[1, 2, 3, 4, 5, 6]");
+            check(test, Arrays.toString(d), "[]");
 
             Random rng = new Random();
             for (int i = 0; i < 100; i++) {

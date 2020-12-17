@@ -13,4 +13,8 @@ public class Sorts {
             if (!swapped) return;
         }
     }
+
+    public static void selectionSort(int[] data) {
+        
+    }
 }
