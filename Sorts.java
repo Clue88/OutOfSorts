@@ -31,15 +31,12 @@ public class Sorts {
     public static void insertionSort(int[] data) {
         for (int i = 1; i < data.length; i++) {
             int old = data[i];
-            for (int j = 0; j < i; j++) {
-                if (old < data[j]) {
-                    for (int k = i - 1; k >= j; k--) {
-                        data[k+1] = data[k];
-                    }
-                    data[j] = old;
-                    break;
-                }
+            int j = i - 1;
+            while (j >= 0 && data[j] > old) {
+                data[j + 1] = data[j];
+                j--;
             }
+            data[j + 1] = old;
         }
     }
 }
